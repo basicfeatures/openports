@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @port %>
+
+<div>
+  <%= link_to "Edit this port", edit_port_path(@port) %> |
+  <%= link_to "Back to ports", ports_path %>
+
+  <%= button_to "Destroy this port", @port, method: :delete %>
+</div>
