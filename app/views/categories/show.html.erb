@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @category %>
-
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
-</div>
+<%= render partial: "shared/header" %>
+<main>
+  <%= render @category %>
+  <div class="options">
+    <%= link_to "Edit", edit_category_path(@category) %>
+    <%= link_to "Delete", @category, method: :delete, class: "button" %>
+  </div>
+  <% @ports.each do |port| %>
+    <article>
+      <h2><%= link_to port.name, port %></h2>
+      <% if port.summary %>
+        <%= tag.p port.summary, class: "summary" %>
+      <% end %>
+      <% if port.description %>
+        <%= tag.p port.description, class: "description" %>
+      <% end %>
+      <% if port.url %>
+        <%= link_to port.url, "#{ port.url }" %>
+      <% end %>
+    </article>
+  </main>
+<% end %>
+<%= render partial: "shared/footer" %>
+ 

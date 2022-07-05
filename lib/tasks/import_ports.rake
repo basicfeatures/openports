@@ -35,7 +35,7 @@ namespace :import do
         Gem::Package::TarReader.new io do |tar|
           tar.each do |tarfile|
             destination_file = File.join destination, tarfile.name
-              
+
             if tarfile.directory?
               FileUtils.mkdir_p destination_file
             else

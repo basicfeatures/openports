@@ -1,0 +1,113 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: serif;
+  font-size: 15px;
+  color: black;
+}
+
+header .logo {
+  overflow: hidden;
+  text-indent: -9999px;
+  margin: 50px auto 40px;
+}
+
+header .logo:before {
+  content: "";
+  position: absolute;
+  background-image: url("openports_275x57.svg");
+}
+
+header .logo, header .logo:before {
+  display: block;
+  width: 275px;
+  height: 57px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 10px;
+  text-align: center;
+  color: #666;
+}
+
+main {
+  padding: 10px;
+}
+
+article {
+  margin: 45px 0;
+}
+
+article > *, .category > * {
+  margin: 5px 0;
+}
+
+article .summary {
+  font-weight: bold;
+}
+
+article .description {
+  color: #666;
+}
+
+article .unavailable {
+  color: #666;
+}
+
+header input {
+  display: block;
+  margin: 0 auto;
+  padding: 11px 18px 11px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  font-size: 19px;
+  font-family: sans-serif;
+  width: 480px; 
+}
+
+header input::placeholder {
+  color: #999;
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 4px;
+}
+
+.buttons > * {
+  border: none;
+  border-radius: 30px;
+  // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  font-family: sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px 12px;
+  margin: 6px;
+}
+
+.buttons > *:nth-of-type(1) {
+  // background: #665cff;
+  background: #efefef;
+  color: #000084;
+  border-radius: 7px;
+}
+
+.buttons > *:nth-of-type(2) {
+  background: #000084;
+  color: white;
+  border-radius: 40px;
+}
+
