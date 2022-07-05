@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-if ! foreman version &> /dev/null
+if ! foreman30 version &> /dev/null
 then
   echo "Installing foreman..."
-  gem install foreman
+  gem install --user-install foreman
 fi
 
-foreman start -f Procfile.dev "$@"
+foreman30 start -f Procfile.dev "$@"
