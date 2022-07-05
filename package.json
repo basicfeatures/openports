@@ -3,5 +3,8 @@
   "private": "true",
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"
+  },
+  "dependencies": {
+    "yarn": "^1.22.19"
   }
 }
