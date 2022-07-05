@@ -6,6 +6,8 @@
     "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "dependencies": {
+    "esbuild": "^0.14.48",
+    "esbuild-rails": "^1.0.3",
     "sass": "^1.53.0",
     "yarn": "^1.22.19"
   }
