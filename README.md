@@ -49,3 +49,7 @@ Misc cleanup:
 
     rails tmp:clear log:clear
 
+Import latest ports from `ftp.usa.openbsd.org`:
+
+    rails import:ports
+
