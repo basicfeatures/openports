@@ -1,24 +1,51 @@
-# README
+# openports.no
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Attempt to make the [OpenBSD package system](https://www.openbsd.org/faq/ports/ports.html) more easily accessible through reactive UIs and basic social networking.
 
-Things you may want to cover:
+    pkg_add ruby zsh
 
-* Ruby version
+Make Bundler install gems locally:
 
-* System dependencies
+    bundle config set path $HOME/.bundle/
 
-* Configuration
+Install Rails:
 
-* Database creation
+    gem install --user-install rails -- --use-system-libraries
 
-* Database initialization
+    echo "path+=($HOME/.local/share/gem/ruby/3.0/bin)" >> ~/.zprofile
+    source ~/.zprofile
 
-* How to run the test suite
+    echo "alias rails='rails30'" >> ~/.zshrc
+    source ~/.zshrc
 
-* Services (job queues, cache servers, search engines, etc.)
+Install gems from `Gemfile`:
 
-* Deployment instructions
+    bundle install
 
-* ...
+    echo "path+=($HOME/.gem/ruby/3.0/bin)" >> ~/.zprofile
+    source ~/.zprofile
+
+Install JS package manager Yarn:
+
+    npm install yarn
+    echo "path+=($HOME/openports/node_modules/yarn/bin)" >> ~/.zprofile
+    source ~/.zprofile
+
+Set up database:
+
+    rails db:drop db:create db:migrate
+
+Import latest ports from `ftp.usa.openbsd.org`:
+
+    rails import:ports
+
+JS, CSS, images and fonts:
+
+    rails javascript:clobber javascript:build
+    rails css:clobber css:build
+    rails assets:clobber assets:precompile
+
+Misc cleanup:
+
+    rails tmp:clear log:clear
+
